@@ -1,0 +1,1 @@
+CALL UpdateSalary(1,10);
