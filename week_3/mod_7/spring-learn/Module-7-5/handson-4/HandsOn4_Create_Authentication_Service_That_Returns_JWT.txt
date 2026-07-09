@@ -1,0 +1,21 @@
+Objective:
+Understand the process of generating JWT tokens.
+
+Process Flow:
+1. Client sends username and password.
+2. Authentication service validates credentials.
+3. Authentication service generates JWT.
+4. JWT token is returned to the client.
+5. Client sends JWT in subsequent requests.
+6. Server validates JWT before processing requests.
+
+Sample Request:
+curl -s -u user:pwd http://localhost:8090/authenticate
+
+Sample Response:
+{
+  "token":"<jwt-token>"
+}
+
+Observation:
+JWT eliminates the need to send username and password in every request and provides a more secure authentication mechanism for RESTful web services.
