@@ -1,0 +1,10 @@
+Encoded Value:
+YWRtaW46cHdk
+
+Decoded Value:
+admin:pwd
+
+Observation:
+Basic Authentication sends credentials encoded using Base64.
+Base64 is not encryption and can be decoded easily.
+Hence Basic Authentication is not secure for production systems.
