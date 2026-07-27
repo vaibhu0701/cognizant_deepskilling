@@ -1,0 +1,21 @@
+<h1>{{ portalName }}</h1>
+<p>Welcome back! Browse your courses, check grades, and manage your enrollment all in one place.</p>
+
+<div class="stats-row">
+  <div class="stat"><strong>{{ coursesAvailable }}</strong><span>Courses Available</span></div>
+  <div class="stat"><strong>{{ enrolled }}</strong><span>Enrolled</span></div>
+  <div class="stat"><strong>{{ gpa }}</strong><span>GPA</span></div>
+</div>
+
+<!-- Property binding: [disabled] -->
+<button [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+<p *ngIf="message">{{ message }}</p>
+
+<!-- Two-way binding via ngModel -->
+<div class="search-box">
+  <label for="search">Search courses</label>
+  <input id="search" [(ngModel)]="searchTerm" placeholder="e.g. Angular" />
+  <p>Searching for: {{ searchTerm }}</p>
+</div>
+
+<p><a routerLink="/courses">Browse all courses →</a></p>

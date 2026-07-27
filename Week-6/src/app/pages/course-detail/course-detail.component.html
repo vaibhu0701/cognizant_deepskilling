@@ -1,0 +1,14 @@
+<a routerLink="/courses">&larr; Back to courses</a>
+
+<p class="error-text" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+<div *ngIf="course" class="detail-card">
+  <h2>{{ course.name }}</h2>
+  <p>{{ course.code }} · {{ course.credits }} credits</p>
+  <p>Status: {{ course.gradeStatus }}</p>
+
+  <h3>Enrolled Students</h3>
+  <ul>
+    <li *ngFor="let student of students">{{ student.name }}</li>
+  </ul>
+</div>

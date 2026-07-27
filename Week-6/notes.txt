@@ -1,0 +1,22 @@
+angular.json        - Workspace configuration: build targets, file paths, styles/scripts, and the
+                       production budgets (maximumWarning/maximumError) that control bundle-size
+                       warnings and build failures.
+tsconfig.json        - Base TypeScript compiler options shared by the whole workspace (target,
+                       strict mode, module resolution) plus Angular-specific compiler flags.
+tsconfig.app.json     - Extends tsconfig.json for the application build; points at src/main.ts as
+                       the entry file.
+package.json         - Lists npm dependencies (Angular, NgRx, RxJS) and the CLI scripts (start,
+                       build, test) used to run the project.
+src/main.ts           - Application entry point; calls bootstrapApplication() with the root
+                       component and the providers defined in app.config.ts.
+src/app/app.config.ts - Standalone-API equivalent of the old AppModule: registers the router,
+                       HttpClient + interceptors, and the NgRx store/effects/devtools providers.
+src/app/app.component.ts - Root component; hosts the header and the <router-outlet> where routed
+                       pages render.
+src/index.html        - The single HTML page the whole SPA is bootstrapped into; contains the
+                       <app-root> tag Angular replaces with the rendered app.
+
+Budgets (angular.json > architect > build > configurations > production):
+  maximumWarning: 500kb  - CLI logs a warning once the initial bundle exceeds this size.
+  maximumError:   1mb    - CLI fails the production build if the initial bundle exceeds this size.
+  (anyComponentStyle budgets apply the same warning/error pattern per-component to CSS files.)
