@@ -1,0 +1,25 @@
+<div *ngIf="course">
+
+  <h2>{{ course.name }}</h2>
+
+  <p><strong>Code:</strong> {{ course.code }}</p>
+
+  <p><strong>Credits:</strong> {{ course.credits }}</p>
+
+  <hr>
+
+  <h3>Enrolled Students</h3>
+
+  <ul *ngIf="studentIds.length > 0; else noStudents">
+
+    <li *ngFor="let id of studentIds">
+      Student ID: {{ id }}
+    </li>
+
+  </ul>
+
+  <ng-template #noStudents>
+    <p>No students enrolled for this course.</p>
+  </ng-template>
+
+</div>

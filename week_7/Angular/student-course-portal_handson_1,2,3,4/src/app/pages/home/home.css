@@ -1,0 +1,10 @@
+h1 {
+  color: #1976d2;
+}
+
+div {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
